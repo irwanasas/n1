@@ -63,10 +63,10 @@ function EmailIcon() {
 }
 
 const SOCIAL_LINKS = [
-  { label: "GitHub", href: "https://github.com/n1repo", icon: <BrandIcon path={ICON_PATHS.github} />, external: true },
-  { label: "Instagram", href: "https://instagram.com/n1insta", icon: <BrandIcon path={ICON_PATHS.instagram} />, external: true },
-  { label: "TikTok", href: "https://tiktok.com/@n1tt", icon: <BrandIcon path={ICON_PATHS.tiktok} />, external: true },
-  { label: "YouTube", href: "https://youtube.com/@n1yt", icon: <BrandIcon path={ICON_PATHS.youtube} />, external: true },
+  { label: "GitHub", href: "https://github.com/n-1repo", icon: <BrandIcon path={ICON_PATHS.github} />, external: true },
+  { label: "Instagram", href: "https://instagram.com/", icon: <BrandIcon path={ICON_PATHS.instagram} />, external: true },
+  { label: "TikTok", href: "https://tiktok.com/", icon: <BrandIcon path={ICON_PATHS.tiktok} />, external: true },
+  { label: "YouTube", href: "https://youtube.com/", icon: <BrandIcon path={ICON_PATHS.youtube} />, external: true },
   { label: "WhatsApp", href: WHATSAPP_URL, icon: <BrandIcon path={ICON_PATHS.whatsapp} />, external: true },
   { label: "Email", href: MAILTO_URL, icon: <EmailIcon />, external: false },
 ];
