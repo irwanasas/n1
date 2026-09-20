@@ -51,6 +51,10 @@ export default function Header() {
           </ul>
         </nav>
 
+        <a className="btn btn-primary header-cta" href="#portfolio">
+          Lihat Portofolio
+        </a>
+
         <div className="header-actions">
           <button
             type="button"
@@ -96,6 +100,9 @@ export default function Header() {
               {link.label}
             </a>
           ))}
+          <a className="btn btn-primary mobile-nav-cta" href="#portfolio" onClick={() => setMenuOpen(false)}>
+            Lihat Portofolio
+          </a>
         </nav>
       </div>
     </header>

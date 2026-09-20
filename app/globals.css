@@ -27,6 +27,8 @@
   --tag-existing-fg: #1e7a44;
   --tag-vision-bg: #fff1de;
   --tag-vision-fg: #a55a17;
+  --dark-surface: var(--navy-900);
+  --on-dark: #ffffff;
 
   --cta-ease: cubic-bezier(0.4, 0, 0.2, 1);
   --cta-fast: 0.16s;
@@ -341,6 +343,12 @@ section:last-of-type {
   transition-duration: var(--cta-fast);
 }
 
+.header-cta {
+  display: none;
+  padding: 10px 18px;
+  font-size: 13.5px;
+}
+
 .header-actions {
   display: flex;
   align-items: center;
@@ -348,8 +356,8 @@ section:last-of-type {
 }
 
 .icon-btn {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -404,6 +412,11 @@ section:last-of-type {
   transition: padding var(--cta-med) var(--cta-ease), opacity var(--cta-fast) var(--cta-ease);
 }
 
+.mobile-nav-cta {
+  margin-top: 14px;
+  align-self: flex-start;
+}
+
 .mobile-nav-wrap.open .mobile-nav {
   padding: 8px 20px 18px;
   opacity: 1;
@@ -445,6 +458,9 @@ section:last-of-type {
   .nav-links {
     display: flex;
   }
+  .header-cta {
+    display: inline-flex;
+  }
   .menu-toggle {
     display: none;
   }
@@ -456,7 +472,7 @@ section:last-of-type {
 /* ---------- hero ---------- */
 .hero {
   background: radial-gradient(1100px 700px at 85% -10%, var(--navy-700) 0%, var(--navy-900) 45%, var(--navy-950) 100%);
-  color: #fff;
+  color: var(--on-dark);
   border-bottom: none;
   padding-top: 88px;
   padding-bottom: 88px;
@@ -575,7 +591,7 @@ section:last-of-type {
 .hero .btn-ghost,
 .closing .btn-ghost {
   border-color: rgba(255, 255, 255, 0.3);
-  color: #fff;
+  color: var(--on-dark);
 }
 
 .hero .btn-ghost:hover,
@@ -611,7 +627,7 @@ section:last-of-type {
 .hero-stats .stat b {
   display: block;
   font-size: 18px;
-  color: #fff;
+  color: var(--on-dark);
 }
 
 .hero-stats .stat span {
@@ -641,6 +657,10 @@ section:last-of-type {
   }
   .grid-3 {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .project-list {
+    columns: 2;
+    column-gap: 24px;
   }
 }
 
@@ -733,8 +753,8 @@ section:last-of-type {
 
 /* ---------- quote ---------- */
 .quote-block {
-  background: var(--navy-900);
-  color: #fff;
+  background: var(--dark-surface);
+  color: var(--on-dark);
   border-radius: 14px;
   padding: 26px 28px;
   margin: 20px 0;
@@ -751,7 +771,7 @@ section:last-of-type {
 /* ---------- philosophy: manifesto + evidence ---------- */
 .manifesto {
   background: linear-gradient(135deg, var(--navy-900), var(--navy-800));
-  color: #fff;
+  color: var(--on-dark);
   border-radius: 16px;
   padding: 36px 32px;
   margin: 24px 0;
@@ -1014,7 +1034,7 @@ section:last-of-type {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--accent-text);
+  color: var(--muted);
   font-weight: 700;
   margin: 16px 0 8px 0;
 }
@@ -1098,8 +1118,8 @@ section:last-of-type {
 }
 
 .phase-head {
-  background: var(--navy-900);
-  color: #fff;
+  background: var(--dark-surface);
+  color: var(--on-dark);
   padding: 14px 18px;
   display: flex;
   justify-content: space-between;
@@ -1191,8 +1211,8 @@ section:last-of-type {
 
 /* ---------- closing / cta ---------- */
 .closing {
-  background: var(--navy-900);
-  color: #fff;
+  background: var(--dark-surface);
+  color: var(--on-dark);
 }
 
 .closing .kicker {
@@ -1225,7 +1245,7 @@ section:last-of-type {
 
 .closing-contact div b {
   display: block;
-  color: #fff;
+  color: var(--on-dark);
   font-size: 13px;
   margin-bottom: 2px;
 }

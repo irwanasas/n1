@@ -161,15 +161,6 @@ export default function Home() {
             secara mandiri.
           </p>
 
-          <div className="grid grid-3" style={{ marginTop: 24 }}>
-            {stats.map((stat) => (
-              <div className="panel stat-card" key={stat.label}>
-                <b>{stat.value}</b>
-                <span>{stat.label}</span>
-              </div>
-            ))}
-          </div>
-
           <div className="subhead" style={{ marginTop: 32 }}>
             Ringkasan Identitas
           </div>
@@ -265,7 +256,7 @@ export default function Home() {
             Enam Proyek yang Telah Dibangun
           </div>
           <div className="panel">
-            <ul className="clean" style={{ columns: 2, columnGap: 24 }}>
+            <ul className="clean project-list">
               {projects.map((project) => (
                 <li key={project.num}>{project.title}</li>
               ))}
@@ -363,10 +354,12 @@ export default function Home() {
             semata, melainkan sebagai perusahaan yang membangun jenjang kapabilitas menuju teknologi AI
             berskala nasional.
           </p>
+        </div>
+      </section>
 
-          <div className="kicker" style={{ marginTop: 48 }}>
-            08 · Masa Depan
-          </div>
+      <section id="long-term-vision">
+        <div className="container">
+          <div className="kicker">08 · Masa Depan</div>
           <h2 className="section-title">Long-Term Vision</h2>
           <div className="divider" />
           <span className="tag vision">Future Vision / Aspiration</span>
@@ -398,10 +391,12 @@ export default function Home() {
             model atau LLM sendiri; tahapan di atas menggambarkan arah pengembangan kapabilitas jangka
             panjang perusahaan.
           </p>
+        </div>
+      </section>
 
-          <div className="kicker" style={{ marginTop: 48 }}>
-            09 · Kedaulatan Teknologi
-          </div>
+      <section id="llm">
+        <div className="container">
+          <div className="kicker">09 · Kedaulatan Teknologi</div>
           <h2 className="section-title">Building Indonesia&apos;s Own LLM</h2>
           <div className="divider" />
           <span className="tag vision">Future Vision / Aspiration</span>
@@ -434,10 +429,12 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="kicker" style={{ marginTop: 48 }}>
-            10 · Kontribusi Strategis
-          </div>
+      <section id="national-security">
+        <div className="container">
+          <div className="kicker">10 · Kontribusi Strategis</div>
           <h2 className="section-title">National Security &amp; Defense Technology</h2>
           <div className="divider" />
           <span className="tag vision">Future Vision / Aspiration</span>
@@ -547,8 +544,12 @@ export default function Home() {
           </p>
 
           <div className="grid grid-2" style={{ marginTop: 8 }}>
-            {positioningCards.map((card) => (
-              <div className="pos-card" key={card.title}>
+            {positioningCards.map((card, i) => (
+              <div
+                className="pos-card"
+                key={card.title}
+                style={i === positioningCards.length - 1 ? { gridColumn: "1 / -1" } : undefined}
+              >
                 <h4>{card.title}</h4>
                 <p>{card.body}</p>
               </div>
