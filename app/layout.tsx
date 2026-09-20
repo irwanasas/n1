@@ -5,7 +5,7 @@ import { withBasePath } from "./base-path";
 export const metadata: Metadata = {
   title: "N-1 Labs — Building Indonesia's Own AI Technology Capability",
   description:
-    "N-1 Labs adalah perusahaan teknologi AI asal Semarang, Indonesia yang membangun AI Agent, software systems, automation, dan digital products.",
+    "N-1 Labs adalah perusahaan teknologi AI asal Semarang, Indonesia yang membangun AI Agent, software systems, automation, dan digital products — dengan filosofi N-1: selalu satu langkah sebelum selesai.",
   icons: { icon: withBasePath("/logo.png") },
 };
 

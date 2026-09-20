@@ -29,6 +29,12 @@ export default function Home() {
       <section className="hero">
         <div className="container">
           <div className="hero-eyebrow">Company Profile · 2026</div>
+          <div className="progress-badge" aria-hidden="true">
+            <span className="progress-track">
+              <span className="progress-fill" />
+            </span>
+            <span className="progress-label">N-1 · Always One Short</span>
+          </div>
           <h1>
             Building Indonesia&apos;s Own <span>AI Technology</span> Capability
           </h1>
@@ -53,6 +59,79 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="philosophy">
+        <div className="container">
+          <div className="kicker">00 · Filosofi</div>
+          <h2 className="section-title">N-1: Selalu Satu Langkah Sebelum Selesai</h2>
+          <div className="divider" />
+
+          <p className="section-lead" style={{ maxWidth: 720 }}>
+            Nama kami bukan kebetulan. Dalam matematika, N melambangkan bilangan penuh — hasil akhir,
+            versi sempurna, titik selesai. Kami menamai diri <b>N-1</b> karena percaya titik itu tidak
+            pernah benar-benar sampai: selalu ada satu hal yang kurang, satu hal yang bisa dibangun,
+            diperbaiki, atau dikembangkan lagi.
+          </p>
+
+          <div className="manifesto">
+            <p className="eq">
+              <span className="no">N-1 = Selesai.</span>
+              <br />
+              <span className="yes">N-1 = Terus Bergerak.</span>
+            </p>
+          </div>
+
+          <p>
+            Perhatikan dua penanda yang muncul berulang di sepanjang halaman ini:
+          </p>
+          <div className="legend-pair">
+            <span className="tag existing">Existing Capability</span>
+            <span className="arrow">— apa yang sudah kami bangun dan pakai secara nyata</span>
+          </div>
+          <div className="legend-pair">
+            <span className="tag vision">Future Vision</span>
+            <span className="arrow">— satu langkah yang selalu menunggu di depan</span>
+          </div>
+          <p>
+            Bagi kami, kedua penanda itu bukan sekadar label kategori — itu adalah N dan N-1: apa yang
+            telah tercapai, dan satu hal yang sengaja kami biarkan belum selesai, karena di situlah kerja
+            berikutnya dimulai.
+          </p>
+
+          <div className="subhead">Bukti, Bukan Sekadar Klaim</div>
+          <div className="evidence-grid">
+            <div className="evidence-card">
+              <h4>Journey yang Berhenti di &ldquo;Vision&rdquo;</h4>
+              <p>
+                Technology Journey kami sengaja berakhir di tahap yang masih berlabel Vision — bukan
+                karena belum selesai ditulis, tapi karena memang belum tercapai.
+              </p>
+              <a href="#journey">Lihat Technology Journey →</a>
+            </div>
+            <div className="evidence-card">
+              <h4>Roadmap Menuju Horizon, Bukan Garis Akhir</h4>
+              <p>
+                Development Roadmap kami berakhir di &ldquo;2030+&rdquo; — sebuah horizon terbuka, bukan
+                tenggat yang bisa dicoret selesai.
+              </p>
+              <a href="#roadmap">Lihat Roadmap →</a>
+            </div>
+            <div className="evidence-card">
+              <h4>Enam Proyek, Enam Fondasi</h4>
+              <p>
+                Setiap proyek yang telah kami bangun bukan tujuan akhir, melainkan satu lapisan fondasi
+                menuju kapabilitas berikutnya.
+              </p>
+              <a href="#portfolio">Lihat Project Portfolio →</a>
+            </div>
+          </div>
+
+          <p className="philosophy-closing">
+            Begitulah cara kami bekerja: N-1 hari ini, mendekati N esok — tanpa pernah benar-benar
+            sampai.
+          </p>
         </div>
       </section>
 
@@ -295,6 +374,10 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <p className="philosophy-closing">
+            Delapan tahap ini sengaja berhenti di sebuah Vision, bukan garis akhir — karena bagi N-1,
+            tidak ada garis akhir.
+          </p>
         </div>
       </section>
 
@@ -450,6 +533,10 @@ export default function Home() {
           <div className="kicker">11 · Prinsip Kerja</div>
           <h2 className="section-title">Company Values</h2>
           <div className="divider" />
+          <p className="section-lead">
+            Ketujuh prinsip ini adalah cara kami menjaga filosofi N-1 tetap hidup dalam setiap keputusan
+            — termasuk keputusan untuk tidak pernah menyebut sebuah sistem sebagai &ldquo;selesai&rdquo;.
+          </p>
 
           <div className="panel">
             {values.map((value, i) => (
@@ -490,6 +577,10 @@ export default function Home() {
               </div>
             </div>
           ))}
+          <p className="philosophy-closing">
+            Fase terakhir berhenti di &ldquo;2030+&rdquo;, bukan tanggal — sebuah horizon yang terus
+            bergerak seiring kami terus membangun.
+          </p>
         </div>
       </section>
 
@@ -574,6 +665,7 @@ export default function Home() {
             <Image src={withBasePath("/logo.png")} alt="N-1 Labs" width={26} height={26} />
             N-1 LABS
           </a>
+          <span className="footer-tagline">N-1 · always one step from finished.</span>
           <span>© 2026 N-1 Labs. All rights reserved.</span>
         </div>
       </footer>

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { withBasePath } from "./base-path";
 
 const NAV_LINKS = [
+  { href: "#philosophy", label: "Filosofi" },
   { href: "#about", label: "Tentang" },
   { href: "#technology", label: "Fokus Teknologi" },
   { href: "#portfolio", label: "Portofolio" },

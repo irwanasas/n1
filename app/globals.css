@@ -112,12 +112,31 @@ section:last-of-type {
   margin: 0 0 8px 0;
 }
 
+/* the "always one short" mark: what's built, plus the one piece left open */
 .divider {
-  width: 44px;
-  height: 3px;
-  background: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  height: 10px;
   margin: 14px 0 28px 0;
+}
+
+.divider::before {
+  content: "";
+  width: 36px;
+  height: 3px;
   border-radius: 2px;
+  background: var(--accent);
+}
+
+.divider::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  border: 2px solid var(--accent);
+  opacity: 0.5;
 }
 
 .tag {
@@ -326,16 +345,73 @@ section:last-of-type {
 }
 
 .hero::after {
-  content: "[ ]";
+  content: "[N−1]";
   position: absolute;
   right: -40px;
   top: 40px;
-  font-size: 340px;
+  font-size: 280px;
   font-weight: 800;
   color: rgba(255, 255, 255, 0.04);
   font-family: Georgia, serif;
   line-height: 1;
   pointer-events: none;
+}
+
+/* ---------- N-1 progress badge: builds up, never completes ---------- */
+.progress-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.progress-track {
+  width: 60px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+  flex: none;
+}
+
+.progress-fill {
+  display: block;
+  height: 100%;
+  width: 92%;
+  border-radius: 999px;
+  background: #8fb0ff;
+  animation: n1-progress 5s ease-in-out infinite;
+}
+
+@keyframes n1-progress {
+  0% {
+    width: 10%;
+  }
+  60% {
+    width: 92%;
+  }
+  85% {
+    width: 92%;
+  }
+  100% {
+    width: 10%;
+  }
+}
+
+.progress-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #b9c6e6;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-fill {
+    animation: none !important;
+    width: 92%;
+  }
 }
 
 .hero-eyebrow {
@@ -541,6 +617,104 @@ section:last-of-type {
   font-style: italic;
   margin: 0;
   line-height: 1.7;
+}
+
+/* ---------- philosophy: manifesto + evidence ---------- */
+.manifesto {
+  background: linear-gradient(135deg, var(--navy-900), var(--navy-800));
+  color: #fff;
+  border-radius: 16px;
+  padding: 36px 32px;
+  margin: 24px 0;
+  text-align: center;
+}
+
+.manifesto .eq {
+  font-size: clamp(22px, 4vw, 34px);
+  font-weight: 800;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.manifesto .eq .no {
+  color: #7e93c2;
+  text-decoration: line-through;
+  text-decoration-color: rgba(126, 147, 194, 0.6);
+}
+
+.manifesto .eq .yes {
+  color: #8fb0ff;
+}
+
+.legend-pair {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 18px 0;
+}
+
+.legend-pair .arrow {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.evidence-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+  margin-top: 20px;
+}
+
+@media (min-width: 720px) {
+  .evidence-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.evidence-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 20px;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.evidence-card h4 {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.evidence-card p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  flex: 1;
+}
+
+.evidence-card a {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.18s ease;
+}
+
+.evidence-card a:hover {
+  gap: 8px;
+}
+
+.philosophy-closing {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 13.5px;
+  margin-top: 24px;
 }
 
 /* ---------- flow chain ---------- */
@@ -888,6 +1062,11 @@ section:last-of-type {
 
 .site-footer .brand {
   font-size: 13px;
+}
+
+.footer-tagline {
+  color: var(--accent);
+  font-weight: 600;
 }
 
 @media (prefers-reduced-motion: reduce) {
