@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Header from "./Header";
+import { withBasePath } from "./base-path";
 import {
   identity,
   stats,
@@ -570,7 +571,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="container">
           <a className="brand" href="#top">
-            <Image src="/logo.png" alt="N-1 Labs" width={26} height={26} />
+            <Image src={withBasePath("/logo.png")} alt="N-1 Labs" width={26} height={26} />
             N-1 LABS
           </a>
           <span>© 2026 N-1 Labs. All rights reserved.</span>
