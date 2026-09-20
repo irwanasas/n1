@@ -18,6 +18,9 @@ const THEME_INIT = `
       : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
     document.documentElement.setAttribute("data-theme", theme);
   } catch (e) {}
+  // iOS Safari only triggers :active on elements if a touch listener
+  // exists somewhere on the page - this unlocks tap/press feedback site-wide.
+  document.addEventListener("touchstart", function () {}, { passive: true });
 })();
 `;
 

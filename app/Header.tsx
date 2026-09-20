@@ -89,13 +89,15 @@ export default function Header() {
         </div>
       </div>
 
-      <nav className={`mobile-nav${menuOpen ? " open" : ""}`}>
-        {NAV_LINKS.map((link) => (
-          <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
-            {link.label}
-          </a>
-        ))}
-      </nav>
+      <div className={`mobile-nav-wrap${menuOpen ? " open" : ""}`}>
+        <nav className="mobile-nav">
+          {NAV_LINKS.map((link) => (
+            <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </div>
     </header>
   );
 }

@@ -53,6 +53,11 @@ body {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
 body {
   background: var(--bg);
   color: var(--ink);
@@ -65,6 +70,11 @@ body {
 
 a {
   color: inherit;
+  touch-action: manipulation;
+}
+
+button {
+  touch-action: manipulation;
 }
 
 img {
@@ -305,6 +315,12 @@ section:last-of-type {
   transform: scaleX(1);
 }
 
+.nav-links a:active {
+  color: var(--accent);
+  opacity: 0.7;
+  transition-duration: var(--cta-fast);
+}
+
 .header-actions {
   display: flex;
   align-items: center;
@@ -346,17 +362,32 @@ section:last-of-type {
   display: inline-flex;
 }
 
-.mobile-nav {
-  display: none;
-  flex-direction: column;
-  gap: 2px;
-  padding: 8px 20px 18px;
-  border-bottom: 1px solid var(--line);
+.mobile-nav-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
   background: var(--surface);
+  transition: grid-template-rows var(--cta-med) var(--cta-ease);
 }
 
-.mobile-nav.open {
+.mobile-nav-wrap.open {
+  grid-template-rows: 1fr;
+  border-bottom: 1px solid var(--line);
+}
+
+.mobile-nav {
   display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 20px;
+  overflow: hidden;
+  opacity: 0;
+  transition: padding var(--cta-med) var(--cta-ease), opacity var(--cta-fast) var(--cta-ease);
+}
+
+.mobile-nav-wrap.open .mobile-nav {
+  padding: 8px 20px 18px;
+  opacity: 1;
+  transition: padding var(--cta-med) var(--cta-ease), opacity var(--cta-med) var(--cta-ease) var(--cta-fast);
 }
 
 .mobile-nav a {
@@ -391,7 +422,7 @@ section:last-of-type {
   .menu-toggle {
     display: none;
   }
-  .mobile-nav {
+  .mobile-nav-wrap {
     display: none !important;
   }
 }
@@ -819,12 +850,18 @@ section:last-of-type {
 .project summary {
   list-style: none;
   cursor: pointer;
+  touch-action: manipulation;
   padding: 18px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   transition: background-color var(--cta-med) var(--cta-ease);
+}
+
+.project summary:active {
+  background-color: var(--bg);
+  transition-duration: var(--cta-fast);
 }
 
 .project summary:hover,
@@ -1151,6 +1188,10 @@ section:last-of-type {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   * {
     transition-duration: 0.001ms !important;
     animation-duration: 0.001ms !important;
