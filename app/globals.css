@@ -24,6 +24,10 @@
   --tag-vision-bg: #fff1de;
   --tag-vision-fg: #b8641a;
 
+  --cta-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --cta-fast: 0.16s;
+  --cta-med: 0.22s;
+
   color-scheme: light;
 }
 
@@ -171,12 +175,15 @@ section:last-of-type {
   text-decoration: none;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  transition: transform var(--cta-med) var(--cta-ease), box-shadow var(--cta-med) var(--cta-ease),
+    background-color var(--cta-med) var(--cta-ease), color var(--cta-med) var(--cta-ease),
+    border-color var(--cta-med) var(--cta-ease);
   will-change: transform;
 }
 
 .btn:active {
   transform: scale(0.97);
+  transition-duration: var(--cta-fast);
 }
 
 .btn-primary {
@@ -231,12 +238,27 @@ section:last-of-type {
   font-weight: 700;
   letter-spacing: 1px;
   color: var(--ink);
+  transition: opacity var(--cta-med) var(--cta-ease);
+}
+
+.brand:hover {
+  opacity: 0.75;
+}
+
+.brand:active {
+  opacity: 0.6;
+  transition-duration: var(--cta-fast);
 }
 
 .brand img {
   width: 34px;
   height: 34px;
   border-radius: 9px;
+  transition: transform var(--cta-med) var(--cta-ease);
+}
+
+.brand:hover img {
+  transform: scale(1.05);
 }
 
 .nav-links {
@@ -249,15 +271,38 @@ section:last-of-type {
 }
 
 .nav-links a {
+  position: relative;
+  display: inline-block;
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
   color: var(--muted);
-  transition: color 0.18s ease;
+  padding-bottom: 3px;
+  transition: color var(--cta-med) var(--cta-ease);
 }
 
-.nav-links a:hover {
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--cta-med) var(--cta-ease);
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
   color: var(--accent);
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .header-actions {
@@ -277,13 +322,19 @@ section:last-of-type {
   background: var(--surface);
   color: var(--ink);
   cursor: pointer;
-  transition: transform 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+  transition: transform var(--cta-med) var(--cta-ease), border-color var(--cta-med) var(--cta-ease),
+    color var(--cta-med) var(--cta-ease);
 }
 
 .icon-btn:hover {
   transform: translateY(-2px);
   border-color: var(--accent);
   color: var(--accent);
+}
+
+.icon-btn:active {
+  transform: scale(0.92);
+  transition-duration: var(--cta-fast);
 }
 
 .icon-btn:focus-visible {
@@ -315,6 +366,18 @@ section:last-of-type {
   font-weight: 600;
   font-size: 15px;
   border-bottom: 1px solid var(--line);
+  transition: color var(--cta-med) var(--cta-ease), padding-left var(--cta-med) var(--cta-ease);
+}
+
+.mobile-nav a:hover,
+.mobile-nav a:focus-visible {
+  color: var(--accent);
+  padding-left: 10px;
+}
+
+.mobile-nav a:active {
+  opacity: 0.6;
+  transition-duration: var(--cta-fast);
 }
 
 .mobile-nav a:last-child {
@@ -703,11 +766,16 @@ section:last-of-type {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  transition: gap 0.18s ease;
+  transition: gap var(--cta-med) var(--cta-ease), opacity var(--cta-fast) var(--cta-ease);
 }
 
-.evidence-card a:hover {
+.evidence-card a:hover,
+.evidence-card a:focus-visible {
   gap: 8px;
+}
+
+.evidence-card a:active {
+  opacity: 0.7;
 }
 
 .philosophy-closing {
@@ -756,6 +824,12 @@ section:last-of-type {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  transition: background-color var(--cta-med) var(--cta-ease);
+}
+
+.project summary:hover,
+.project summary:focus-visible {
+  background-color: var(--bg);
 }
 
 .project summary::-webkit-details-marker {
@@ -790,7 +864,14 @@ section:last-of-type {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease;
+  transition: transform var(--cta-med) var(--cta-ease), border-color var(--cta-med) var(--cta-ease),
+    color var(--cta-med) var(--cta-ease);
+}
+
+.project summary:hover .chev,
+.project summary:focus-visible .chev {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .project[open] summary .chev {
