@@ -641,6 +641,45 @@ section:last-of-type {
   letter-spacing: 0.5px;
 }
 
+.hero-socials {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+  position: relative;
+}
+
+.hero-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7);
+  touch-action: manipulation;
+  transition: color var(--cta-med) var(--cta-ease), background-color var(--cta-med) var(--cta-ease),
+    transform var(--cta-med) var(--cta-ease);
+}
+
+.hero-social-link:hover,
+.hero-social-link:focus-visible {
+  color: #8fb0ff;
+  background-color: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.hero-social-link:active {
+  transform: scale(0.92);
+  transition-duration: var(--cta-fast);
+}
+
+.hero-social-link:focus-visible {
+  outline: 2px solid #8fb0ff;
+  outline-offset: 2px;
+}
+
 /* ---------- generic panel / grid ---------- */
 .panel {
   background: var(--surface);
