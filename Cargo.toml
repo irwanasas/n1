@@ -1,0 +1,6 @@
+[workspace]
+resolver = "2"
+members = ["site", "frontend", "prerender"]
+
+[workspace.package]
+edition = "2024"

@@ -20,23 +20,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - uses: dtolnay/rust-toolchain@stable
         with:
-          node-version: 22
-          cache: npm
+          targets: wasm32-unknown-unknown
 
-      - run: npm ci
+      - uses: Swatinem/rust-cache@v2
+
+      - run: cargo install trunk --locked
 
       - id: pages
         uses: actions/configure-pages@v5
 
-      - run: npm run build
-        env:
-          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+      - run: trunk build --release --public-url "${{ steps.pages.outputs.base_path }}/"
+
+      - run: cargo run -p prerender --release -- dist
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: out
+          path: dist
 
   deploy:
     needs: build

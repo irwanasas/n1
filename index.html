@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>N-1 Labs — Building Indonesia's Own AI Technology Capability</title>
+    <meta
+      name="description"
+      content="N-1 Labs adalah perusahaan teknologi AI asal Semarang, Indonesia yang membangun AI Agent, software systems, automation, dan digital products — dengan filosofi N-1: selalu satu langkah sebelum selesai."
+    />
+    <link rel="icon" href="logo.png" />
+
+    <meta property="og:title" content="N-1 Labs — Building Indonesia's Own AI Technology Capability" />
+    <meta
+      property="og:description"
+      content="N-1 Labs adalah perusahaan teknologi AI asal Semarang, Indonesia yang membangun AI Agent, software systems, automation, dan digital products — dengan filosofi N-1: selalu satu langkah sebelum selesai."
+    />
+    <meta property="og:url" content="https://irwanasas.github.io/n1/" />
+    <meta property="og:site_name" content="N-1 Labs" />
+    <meta property="og:image" content="https://irwanasas.github.io/n1/logo.png" />
+    <meta property="og:image:width" content="985" />
+    <meta property="og:image:height" content="985" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="N-1 Labs — Building Indonesia's Own AI Technology Capability" />
+    <meta
+      name="twitter:description"
+      content="N-1 Labs adalah perusahaan teknologi AI asal Semarang, Indonesia yang membangun AI Agent, software systems, automation, dan digital products — dengan filosofi N-1: selalu satu langkah sebelum selesai."
+    />
+    <meta name="twitter:image" content="https://irwanasas.github.io/n1/logo.png" />
+
+    <link data-trunk rel="rust" href="frontend/Cargo.toml" data-bin="frontend" />
+    <link data-trunk rel="css" href="style/globals.css" />
+    <link data-trunk rel="copy-file" href="public/logo.png" data-target-path="." />
+
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("n1-theme");
+          var theme = stored === "light" || stored === "dark"
+            ? stored
+            : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {}
+        document.addEventListener("touchstart", function () {}, { passive: true });
+      })();
+    </script>
+  </head>
+  <body><!--SSG_CONTENT--></body>
+</html>

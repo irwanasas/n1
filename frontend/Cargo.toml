@@ -1,0 +1,9 @@
+[package]
+name = "frontend"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+site = { path = "../site", features = ["hydrate"] }
+leptos = { version = "0.8.20", default-features = false, features = ["hydrate"] }
+console_error_panic_hook = "0.1"
