@@ -133,10 +133,10 @@ export const projects: Project[] = [
     solution:
       "N-1 Labs mengembangkan AI Agent yang mampu menjawab pelanggan secara otomatis dengan memanfaatkan knowledge perusahaan, memahami konteks percakapan, serta menjawab pertanyaan umum (FAQ) sebelum diteruskan ke human agent bila diperlukan.",
     function: [
-      "Menjawab customer secara otomatis dan kontekstual",
+      "Menjawab pelanggan secara otomatis dan kontekstual",
       "Memanfaatkan knowledge base perusahaan",
       "Beroperasi 24/7 tanpa batasan jam kerja",
-      "Menjadi lapisan cerdas antara customer dan business system",
+      "Menjadi lapisan cerdas antara pelanggan dan sistem bisnis",
     ],
     impact: [
       "Respons pelanggan lebih cepat dan konsisten",
@@ -280,15 +280,6 @@ export const visionPoints = [
 ];
 
 export const positioningFlow = ["AI Technology Company", "AI Infrastructure", "AI Research", "National Technology Capability"];
-
-export const conceptualRoadmap = [
-  "AI Application",
-  "AI Agent",
-  "AI Infrastructure",
-  "Data & Computing",
-  "Model Engineering",
-  "Foundation Model / LLM",
-];
 
 export const llmStages = [
   { title: "1. AI Application", body: "Membangun produk dan sistem berbasis AI untuk kebutuhan nyata." },

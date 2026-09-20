@@ -12,7 +12,6 @@ import {
   journey,
   visionPoints,
   positioningFlow,
-  conceptualRoadmap,
   llmStages,
   llmReasons,
   securityAreas,
@@ -374,22 +373,8 @@ export default function Home() {
           <p>
             N-1 Labs saat ini fokus membangun AI Agent dan sistem berbasis AI untuk kebutuhan bisnis.
             Namun, arah jangka panjang perusahaan mengarah pada kontribusi terhadap kapabilitas Indonesia
-            dalam membangun teknologi AI-nya sendiri — termasuk Large Language Model (LLM).
-          </p>
-
-          <div className="subhead">Roadmap Kapabilitas Konseptual</div>
-          <div className="panel flow-chain">
-            {conceptualRoadmap.map((step, i) => (
-              <div className="step" key={step} style={{ display: "flex", alignItems: "center", gap: 10, flex: "1 1 auto" }}>
-                <span>{step}</span>
-                {i < conceptualRoadmap.length - 1 && <span className="arrow">→</span>}
-              </div>
-            ))}
-          </div>
-          <p style={{ fontSize: 12, color: "var(--muted)", marginTop: 12 }}>
-            Roadmap ini bersifat konseptual dan aspirasional. N-1 Labs saat ini belum memiliki foundation
-            model atau LLM sendiri; tahapan di atas menggambarkan arah pengembangan kapabilitas jangka
-            panjang perusahaan.
+            dalam membangun teknologi AI-nya sendiri — termasuk Large Language Model (LLM). Tahapan
+            konseptualnya dijelaskan lebih detail di bagian berikut.
           </p>
         </div>
       </section>
@@ -580,7 +565,7 @@ export default function Home() {
 
           <div className="hero-ctas">
             <a className="btn btn-primary" href="#portfolio">
-              Lihat Portofolio Kami
+              Lihat Portofolio
             </a>
             <a className="btn btn-ghost" href="#top">
               Kembali ke Atas

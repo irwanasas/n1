@@ -2,11 +2,30 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { withBasePath } from "./base-path";
 
+const TITLE = "N-1 Labs — Building Indonesia's Own AI Technology Capability";
+const DESCRIPTION =
+  "N-1 Labs adalah perusahaan teknologi AI asal Semarang, Indonesia yang membangun AI Agent, software systems, automation, dan digital products — dengan filosofi N-1: selalu satu langkah sebelum selesai.";
+
 export const metadata: Metadata = {
-  title: "N-1 Labs — Building Indonesia's Own AI Technology Capability",
-  description:
-    "N-1 Labs adalah perusahaan teknologi AI asal Semarang, Indonesia yang membangun AI Agent, software systems, automation, dan digital products — dengan filosofi N-1: selalu satu langkah sebelum selesai.",
+  metadataBase: new URL("https://irwanasas.github.io/n1/"),
+  title: TITLE,
+  description: DESCRIPTION,
   icons: { icon: withBasePath("/logo.png") },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: "/",
+    siteName: "N-1 Labs",
+    images: [{ url: withBasePath("/logo.png"), width: 985, height: 985, alt: "N-1 Labs" }],
+    locale: "id_ID",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [withBasePath("/logo.png")],
+  },
 };
 
 const THEME_INIT = `
