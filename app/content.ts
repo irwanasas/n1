@@ -1,3 +1,9 @@
+export const contact = {
+  whatsapp: "6285691966199",
+  whatsappDisplay: "+62 856-9196-6199",
+  email: "contact@n-1labs.com",
+};
+
 export const identity = [
   { label: "Nama Perusahaan", value: "N-1 Labs" },
   { label: "Didirikan", value: "2 September 2026" },
