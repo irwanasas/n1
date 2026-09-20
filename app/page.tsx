@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Header from "./Header";
+import Portfolio from "./Portfolio";
 import { withBasePath } from "./base-path";
 import {
   identity,
@@ -285,64 +286,7 @@ export default function Home() {
           </p>
           <span className="tag existing">Existing Capability</span>
 
-          <div style={{ marginTop: 24 }}>
-            {projects.map((project) => (
-              <details className="project" key={project.num}>
-                <summary>
-                  <div className="heading">
-                    <span className="num">PROJECT {project.num}</span>
-                    <span className="title">{project.title}</span>
-                  </div>
-                  <span className="chev" aria-hidden="true">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M12 5v14M5 12h14" />
-                    </svg>
-                  </span>
-                </summary>
-                <div className="project-body">
-                  <div className="project-position">&quot;{project.position}&quot;</div>
-
-                  <div className="subhead">Problem</div>
-                  <p style={{ fontSize: 13.5, margin: 0 }}>{project.problem}</p>
-
-                  <div className="subhead">Solution</div>
-                  <p style={{ fontSize: 13.5, margin: 0 }}>{project.solution}</p>
-
-                  {project.flow && (
-                    <div className="panel" style={{ textAlign: "center", marginTop: 12, fontSize: 12.5, fontWeight: 700 }}>
-                      {project.flow}
-                    </div>
-                  )}
-
-                  <div className="grid grid-2" style={{ marginTop: 12 }}>
-                    <div className="panel">
-                      <h4 style={{ margin: "0 0 8px 0", fontSize: 11.5, textTransform: "uppercase", letterSpacing: 0.5 }}>
-                        Function
-                      </h4>
-                      <ul className="clean">
-                        {project.function.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="panel">
-                      <h4 style={{ margin: "0 0 8px 0", fontSize: 11.5, textTransform: "uppercase", letterSpacing: 0.5 }}>
-                        Impact
-                      </h4>
-                      <ul className="clean">
-                        {project.impact.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="subhead">What N-1 Labs Learned / Built</div>
-                  <p style={{ fontSize: 13.5, margin: 0 }}>{project.learned}</p>
-                </div>
-              </details>
-            ))}
-          </div>
+          <Portfolio projects={projects} />
         </div>
       </section>
 

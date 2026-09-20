@@ -845,10 +845,18 @@ section:last-of-type {
   background: var(--surface);
   margin-bottom: 14px;
   overflow: hidden;
+  transition: border-color var(--cta-med) var(--cta-ease), box-shadow var(--cta-med) var(--cta-ease);
 }
 
-.project summary {
-  list-style: none;
+.project:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+
+.project-trigger {
+  all: unset;
+  box-sizing: border-box;
+  width: 100%;
   cursor: pointer;
   touch-action: manipulation;
   padding: 18px 20px;
@@ -856,43 +864,46 @@ section:last-of-type {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  background-color: transparent;
   transition: background-color var(--cta-med) var(--cta-ease);
 }
 
-.project summary:active {
-  background-color: var(--bg);
+.project-trigger:hover,
+.project-trigger:focus-visible {
+  background-color: rgba(61, 111, 242, 0.06);
+}
+
+.project-trigger:active {
+  background-color: rgba(61, 111, 242, 0.12);
   transition-duration: var(--cta-fast);
 }
 
-.project summary:hover,
-.project summary:focus-visible {
-  background-color: var(--bg);
+.project-trigger:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
 }
 
-.project summary::-webkit-details-marker {
-  display: none;
-}
-
-.project summary .heading {
+.project-trigger .heading {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  text-align: left;
 }
 
-.project summary .num {
+.project-trigger .num {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 1px;
   color: var(--accent);
 }
 
-.project summary .title {
+.project-trigger .title {
   font-size: 17px;
   font-weight: 700;
   color: var(--ink);
 }
 
-.project summary .chev {
+.project-trigger .chev {
   flex: none;
   width: 26px;
   height: 26px;
@@ -905,19 +916,45 @@ section:last-of-type {
     color var(--cta-med) var(--cta-ease);
 }
 
-.project summary:hover .chev,
-.project summary:focus-visible .chev {
+.project-trigger:hover .chev,
+.project-trigger:focus-visible .chev {
   border-color: var(--accent);
   color: var(--accent);
+  transform: scale(1.1);
 }
 
-.project[open] summary .chev {
+.project.open .project-trigger .chev {
   transform: rotate(45deg);
 }
 
+.project.open .project-trigger:hover .chev,
+.project.open .project-trigger:focus-visible .chev {
+  transform: rotate(45deg) scale(1.1);
+}
+
+.project-body-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--cta-med) var(--cta-ease);
+}
+
+.project.open .project-body-wrap {
+  grid-template-rows: 1fr;
+}
+
 .project-body {
+  overflow: hidden;
+  padding: 0 20px;
+  opacity: 0;
+  transition: padding var(--cta-med) var(--cta-ease), opacity var(--cta-fast) var(--cta-ease);
+}
+
+.project.open .project-body {
   padding: 0 20px 22px 20px;
   border-top: 1px solid var(--line);
+  opacity: 1;
+  transition: padding var(--cta-med) var(--cta-ease), opacity var(--cta-med) var(--cta-ease) var(--cta-fast),
+    border-color var(--cta-med) var(--cta-ease);
 }
 
 .project-position {
